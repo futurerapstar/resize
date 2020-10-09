@@ -20,11 +20,11 @@ export default {
       list: [
         { class: "ball1", name: "echarts", path: "/echarts" },
         { class: "ball2", name: "aMap", path: "/aMap" },
-        { class: "ball3", name: "顶顶顶", path: "/biPanel/projectIntro" },
-        { class: "ball4", name: "bbbb", path: "/biPanel/cameraList" },
-        { class: "ball5", name: "ccc", path: "/biPanel/safetyQuality" },
-        { class: "ball6", name: "dd", path: "/biPanel/smartParty" },
-        { class: "ball7", name: "eeeeee", path: "/biPanel/laborMangmt" },
+        { class: "ball3", name: "只是", path: "/pickMe" },
+        { class: "ball4", name: "个", path: "/pickMe" },
+        { class: "ball5", name: "简单", path: "/pickMe" },
+        { class: "ball6", name: "的", path: "/pickMe" },
+        { class: "ball7", name: "导航", path: "/pickMe" },
       ],
       curIndex: -1,
     };

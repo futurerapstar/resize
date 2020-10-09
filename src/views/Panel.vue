@@ -30,11 +30,11 @@ let autoScale = function () {
       container.setAttribute(
         "style",
         frameStyle +
-        "-ms-transform: scale(" +
-        rate +
-        "," +
-        rate +
-        ") translate(-50%, -50%)"
+          "-ms-transform: scale(" +
+          rate +
+          "," +
+          rate +
+          ") translate(-50%, -50%)"
       );
       return;
     }
@@ -44,7 +44,7 @@ let autoScale = function () {
     container.style.MozTransform = "scale(" + rate + ") translate(-50%, -50%)";
   };
 
-  function autoScale () {
+  function autoScale() {
     clearTimeout(timeTicket);
     timeTicket = setTimeout(transform, 100);
   }
@@ -54,12 +54,12 @@ let autoScale = function () {
 };
 export default {
   name: "panel",
-  mounted () {
+  mounted() {
     autoScale();
   },
-  beforeDestroy () {
+  beforeDestroy() {
     window.removeEventListener("resize", autoScale);
-  }
+  },
 };
 </script>
 
@@ -71,7 +71,6 @@ export default {
   font-size: 18px;
   color: #fff;
   .scale-box {
-    background: #7247d7;
     transform-origin: 0 0;
     position: fixed;
     left: 50%;

@@ -1,5 +1,10 @@
 <template>
-  <div class="reveal">sword art online</div>
+  <div class="parent">
+    <header>
+      <h1 class="title slide-bar">Stay hungry</h1>
+      <p class="subtitle slide-bar">Stay foolish</p>
+    </header>
+  </div>
 </template>
 
 <script>
@@ -24,77 +29,87 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import url("https://fonts.googleapis.com/css?family=Raleway:400,400i,700");
+@import url("https://fonts.googleapis.com/css?family=Lato");
+@import url("https://fonts.googleapis.com/css?family=Lora:400,400i,700");
 
-body {
+.parent {
+  height: 100%;
   display: flex;
-  height: 100vh;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  background: #222;
 }
-
-.reveal {
+.slide-bar {
   position: relative;
-  display: flex;
-  color: #6ee1f5;
-  font-size: 2em;
-  font-family: Raleway, sans-serif;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  white-space: pre;
+  color: #333;
+  animation: fill-text-white 2s 1.6s forwards;
 
-  span {
-    opacity: 0;
-    transform: scale(0);
-    animation: fadeIn 2.4s forwards;
-  }
-
-  &::before,
-  &::after {
+  &::before {
     position: absolute;
     content: "";
     top: 0;
-    bottom: 0;
-    width: 2px;
+    left: 0;
+    width: 100%;
     height: 100%;
-    background: white;
-    opacity: 0;
-    transform: scale(0);
-  }
-
-  &::before {
-    left: 50%;
-    animation: slideLeft 1.5s cubic-bezier(0.7, -0.6, 0.3, 1.5) forwards;
-  }
-
-  &::after {
-    right: 50%;
-    animation: slideRight 1.5s cubic-bezier(0.7, -0.6, 0.3, 1.5) forwards;
+    background: #35b9f1;
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: slide-in-out 2s cubic-bezier(0.75, 0, 0, 1) forwards;
   }
 }
 
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-    transform: scale(1);
+@keyframes slide-in-out {
+  50% {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  50.1% {
+    transform-origin: right;
+  }
+
+  100% {
+    transform: scaleX(0);
+    transform-origin: right;
   }
 }
 
-@keyframes slideLeft {
+@keyframes fill-text-white {
   to {
-    left: -6%;
-    opacity: 1;
-    transform: scale(0.9);
+    color: white;
   }
 }
 
-@keyframes slideRight {
-  to {
-    right: -6%;
-    opacity: 1;
-    transform: scale(0.9);
+header {
+  .title,
+  .subtitle {
+    width: 250px;
+    height: 36px;
+  }
+
+  .title {
+    margin: 30px 0 0 0;
+    font-family: Lora, serif;
+    font-size: 32px;
+    line-height: 30px;
+
+    &::before {
+      background: #ff4081;
+    }
+  }
+
+  .subtitle {
+    margin: 10px 0 0 0;
+    font-family: Lato, sans-serif;
+    font-size: 12px;
+    line-height: 30px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    animation-delay: 3.2s;
+
+    &::before {
+      background: #03a9f4;
+      animation-delay: 2s;
+    }
   }
 }
 </style>
