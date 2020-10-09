@@ -7,7 +7,6 @@ export default {
   name: "pickMe",
   methods: {
     init() {
-      let duration = 0.8;
       let delay = 0.3;
       let revealText = document.querySelector(".reveal");
       let letters = revealText.textContent.split("");
